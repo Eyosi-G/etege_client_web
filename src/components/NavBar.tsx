@@ -1,11 +1,14 @@
 import React from 'react'
 import Cart from './Cart'
+import CartList from './CartList'
 import Category from './Category'
+import Modal from './Modal'
 import NavItem from './NavItem'
 
 const NavBar = () => {
   return (
     <div className='grid grid-cols-3 items-center  px-5 md:px-10 py-5 fixed z-20 bg-white left-0 right-0 top-0'>
+      <CartList />
       <div className='space-x-5 text-sm font-light hidden md:flex '>
         <NavItem name='NEW IN' />
         <NavItem name='VIEW ALL' />

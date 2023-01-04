@@ -17,7 +17,7 @@ const Product = () => {
             </div>
             <div className='text-center mt-4 text-sm'>Minimal Yumi Dress Navy Blue</div>
             <div className='flex justify-center space-x-2'>
-                <div className='text-xs mt-1 text-gray-700 line-through'>3200 ETB</div>
+                <div className='text-xs mt-1 text-red-700 line-through decoration-red-700'>3200 ETB</div>
                 <div className='text-xs mt-1 text-gray-700'>3200 ETB</div>
             </div>
         </div>
