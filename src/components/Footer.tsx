@@ -71,7 +71,7 @@ const Footer = () => {
                     {third}
                 </div>
             </div>
-            <div className='bg-gray-800 py-5 text-white'>
+            <div className='bg-black py-5 text-white'>
                 <div className='grid grid-cols-5 p-2'>
                     <div className='flex justify-center col-span-full md:col-span-1'>
                         <div className=''>

@@ -11,7 +11,6 @@ const Paginator = () => {
     const [pages, setPages] = useState<number[]>([])
 
 
-
     const onLastPage = () => {
         const lastPage = Math.floor(total / limit)
         setPage(lastPage)

@@ -1,5 +1,6 @@
 import React from 'react'
 import Cart from './Cart'
+import CartList from './CartList'
 
 import NavItem from './NavItem'
 import Search from './Search'
