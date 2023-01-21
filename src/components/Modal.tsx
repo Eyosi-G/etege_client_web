@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 interface IProps {
@@ -9,9 +9,14 @@ interface IProps {
 const Modal = (props: IProps) => {
     const modal = document.getElementById("modal");
     const element = document.createElement("div")
-    useEffect(() => {
+    useLayoutEffect(() => {
         modal?.appendChild(element);
-    }, [])
+        return () => {
+            modal?.removeChild(element)
+        }
+    }, [props.open])
+
+    
 
     if (!props.open) return null;
     return (

@@ -6,9 +6,9 @@ import NavBar from '../components/NavBar'
 
 const AllProductsPage = () => {
     return (
-        <div className='relative'>
+        <div className=''>
             <NavBar/>
-            <div className='relative top-28 grid grid-cols-12 p-10 mb-28 gap-5'>
+            <div className='grid grid-cols-12 p-10 mb-28 gap-5'>
                 <div className='col-span-full md:col-span-2 '>
                     <FilterMenus />
                 </div>

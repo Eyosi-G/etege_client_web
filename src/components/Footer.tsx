@@ -72,15 +72,12 @@ const Footer = () => {
                 </div>
             </div>
             <div className='bg-black py-5 text-white'>
-                <div className='grid grid-cols-5 p-2'>
-                    <div className='flex justify-center col-span-full md:col-span-1'>
+                <div className='grid grid-cols-6 p-2'>
+                    <div className='flex justify-center col-span-full md:col-span-2'>
                         <div className=''>
-                            <h1 className='text-3xl text-center relative w-fit text-white'>
-                                etege
-                                <div className='absolute -bottom-2 flex space-x-1 ml-2'>
-                                    <div className='h-1 w-2 rounded-full' style={{ backgroundColor: "#39FF14" }}></div>
-                                    <div className='h-1 w-5 rounded-full' style={{ backgroundColor: "#39FF14" }}></div>
-                                </div>
+                            <h1 className='px-10 font-bold text-lg tracking-widest uppercase mt-9 mb-3'>
+                                <span className='p-2 '>Everything</span>
+                                <span className='p-2 bg-white text-black'>Addis</span>
                             </h1>
                         </div>
                     </div>
@@ -113,8 +110,6 @@ const Footer = () => {
                     </FooterContent>
                 </div>
             </div>
-
-
         </div>
     )
 }

@@ -28,7 +28,7 @@ const Hero = () => {
         // }
     }, [])
     return (
-        <div className='relative top-24 -mt-1'>
+        <div className=''>
             <div className='tracking-wider font-mono bg-black capitalize selection:bg-white selection:text-black w-full p-2 text-white text-center font-light text-sm'>
                 Free Shipping For all Addis Ababa orders over 3000 ETB
             </div>
