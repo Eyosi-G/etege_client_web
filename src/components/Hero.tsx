@@ -22,10 +22,10 @@ const Hero = () => {
 
 
     useEffect(() => {
-        // const id = setInterval(nextSlide, 3000)
-        // return () => {
-        //     clearInterval(id)
-        // }
+        const id = setInterval(nextSlide, 3000)
+        return () => {
+            clearInterval(id)
+        }
     }, [])
     return (
         <div className=''>

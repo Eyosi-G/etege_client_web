@@ -56,7 +56,7 @@ const AddToCart = (props: IProps) => {
                     <div className='flex'>
                         <Quantity qty={quantity} increment={increment} decrement={decrement} />
                     </div>
-                    <AddToCartButton addToCartHandler={() => { dispatch(addToCart({ product, quantity })) }} />
+                    <AddToCartButton isDisabled={product.isSoldOut} text={product.isSoldOut ? 'Sold Out' : undefined} addToCartHandler={() => { dispatch(addToCart({ product, quantity })) }} />
                 </div>
                 <ProductDetail description={product.description} />
                 <div className='h-10'></div>

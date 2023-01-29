@@ -63,7 +63,7 @@ const Footer = () => {
 
 
     return (
-        <div className='mt-10'>
+        <div className=''>
             <div className='flex justify-center  bg-gray-100'>
                 <div className='grid grid-cols-1 md:grid-cols-3  p-10 gap-10'>
                     {first}
@@ -79,6 +79,11 @@ const Footer = () => {
                                 <span className='p-2 '>Everything</span>
                                 <span className='p-2 bg-white text-black'>Addis</span>
                             </h1>
+                            <div className='flex px-10 space-x-5 justify-center' >
+                                <a href=""><img className='h-8' src="/icons/instagram.svg" /></a>
+                                <a href='https://t.me/everything_addis'><img className='h-8' src="/icons/telegram.svg" />       </a>
+                                <a href='https://www.facebook.com/everything.addis.shop'><img className='h-8' src="/icons/facebook.svg" /></a>
+                            </div>
                         </div>
                     </div>
                     <FooterContent spanTwo={false} open={supportOpen} toggleOpen={() => toggleOpen(OpenType.support)} title='Support'>

@@ -10,18 +10,29 @@ export interface IFetchCategoryResponse {
     total: number
 }
 
+export interface IFetchCategoryRequest extends IPagination {
+    name?: string;
+}
+
 const categoryService = api.injectEndpoints({
     endpoints(build) {
         return {
-            fetchCategories: build.query<IFetchCategoryResponse, IPagination>({
-                query: ({ limit, page }) => {
+            fetchCategories: build.query<IFetchCategoryResponse, IFetchCategoryRequest>({
+                query: ({ limit, page, name }) => {
+                    console.log(`name -> ${name}`)
                     const queries: string[] = []
                     if (limit) {
                         queries.push(`limit=${limit}`)
                     }
+
                     if (page) {
                         queries.push(`page=${page}`)
                     }
+
+                    if (name != undefined) {
+                        queries.push(`name=${name}`)
+                    }
+
                     return ({
                         url: `categories?${queries.join("&")}`,
 

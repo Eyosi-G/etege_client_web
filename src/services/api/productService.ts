@@ -11,6 +11,8 @@ export interface IProduct {
     price: number;
     compareAtPrice?: number;
     categories: ICategory[]
+    isNew: boolean;
+    isSoldOut: boolean;
 }
 
 export interface IGetProductResponse {
@@ -20,6 +22,8 @@ export interface IGetProductResponse {
 
 export interface IGetProductRequest extends IPagination {
     categories?: number[];
+    isNew?: boolean;
+    name?: string;
 }
 
 const productService = api.injectEndpoints({
@@ -45,10 +49,17 @@ const productService = api.injectEndpoints({
                         queries.push(`page=${data.page}`)
                     }
 
+                    if (data.name) {
+                        queries.push(`name=${data.name}`)
+                    }
+
                     if (data.categories) {
                         data.categories.forEach(category => {
                             queries.push(`categories=${category}`)
                         })
+                    }
+                    if (data.isNew !== undefined) {
+                        queries.push(`isNew=${data.isNew}`)
                     }
                     return {
                         url: `products?${queries.join("&")}`

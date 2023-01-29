@@ -12,7 +12,6 @@ const OrderTrackingPage = () => {
     const { data } = useGetOrderQuery(id ? id : skipToken)
     return (
         <div className='relative'>
-            <NavBar />
             <div className='mt-10'>
                 {/* <div className='flex justify-center'>
                     <div className='flex space-x-2 items-center border border-black p-1'>

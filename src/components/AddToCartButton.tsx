@@ -1,12 +1,16 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 import React from 'react'
 
 interface IProps {
-  addToCartHandler: ()=> void;
+  isDisabled?: boolean;
+  text?: string;
+  addToCartHandler: () => void;
 }
 const AddToCartButton = (props: IProps) => {
-  const { addToCartHandler} = props
+  const { addToCartHandler, isDisabled, text } = props
+
   return (
-    <div onClick={addToCartHandler} className='hover:cursor-pointer hover:bg-black hover:text-white p-3 uppercase border col-span-full sm:col-span-5 flex justify-center items-center grow font-bold tracking-widest border-black font-mono px-5 py-2 rounded-full'>Add To Cart</div>
+    <div onClick={isDisabled ? undefined : addToCartHandler} className={`${isDisabled ? "bg-gray-200 text-gray-600" : "hover:cursor-pointer hover:bg-black hover:text-white  border-black"} p-3 uppercase border col-span-full sm:col-span-5 flex justify-center items-center grow font-bold tracking-widest font-mono px-5 py-2 rounded-full`}>{text ? text : "Add To Cart"}</div>
   )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import AllProducts from '../components/AllProducts'
 import FilterMenus from '../components/FilterMenus'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
+import NewProducts from '../components/NewProducts'
 
-const AllProductsPage = () => {
+const NewProductsPage = () => {
     return (
         <div className=''>
             <div className='grid grid-cols-12 p-10 mb-28 gap-5'>
@@ -12,7 +12,7 @@ const AllProductsPage = () => {
                     <FilterMenus />
                 </div>
                 <div className='col-span-full md:col-span-10'>
-                    <AllProducts />
+                    <NewProducts />
                 </div>
             </div>
             <Footer />
@@ -20,4 +20,4 @@ const AllProductsPage = () => {
     )
 }
 
-export default AllProductsPage
+export default NewProductsPage

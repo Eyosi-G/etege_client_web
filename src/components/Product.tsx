@@ -28,6 +28,9 @@ const Product = (props: IProps) => {
             <div className="h-96 w-full relative" >
                 <img onClick={() => navigate(`/products/${product.slug}`)} src={`${imageBaseUrl}${product.images[selectedIndex]}`} className="h-full w-full object-cover" />
                 <div onClick={() => dispatch(setProduct(product))} className='hover:cursor-pointer hidden group-hover:block text-center text-sm font-light bg-black absolute bottom-2 right-2 left-2 p-2 text-white'>Add to cart</div>
+                {product.isNew && !product.isSoldOut && <div className='absolute top-2 right-2 bg-green-300  text-sm rounded-lg px-2 py-1 font-bold uppercase'>New</div>}
+                {product.isSoldOut && <div className='absolute top-2 left-2  text-white text-sm  px-2 py-1 uppercase bg-gray-700'>Sold Out</div>}
+
             </div>
             <div className='text-center mt-4 text-sm'>{product.name}</div>
             <div className='flex justify-center space-x-2'>

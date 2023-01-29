@@ -20,7 +20,7 @@ const CategoryList = () => {
                         const isSelected = categories.includes(category.id)
                         return (
                             <div className='flex space-x-2 items-center'>
-                                <input type="checkbox" onChange={(e) => dispatch(toggleCategory(category.id))} capture={isSelected} />
+                                <input type="checkbox" onChange={(e) => dispatch(toggleCategory(category.id))} checked={isSelected} />
                                 <p className='capitalize'>{category.name}</p>
                             </div>
                         )

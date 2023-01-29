@@ -18,7 +18,6 @@ const AddToCartPage = () => {
 
     return (
         <div>
-            <NavBar />
             <div className='px-10 mt-5' >
                 {isSuccess && <AddToCart product={data} />}
                 <div className='uppercase text-3xl font-bold my-5 text-center'>YOU MAY ALSO LIKE</div>
