@@ -14,7 +14,7 @@ const CartList = (props: IProps) => {
   const { open, closeCartList } = props
   return (
     <Modal open={open}  >
-      <div className='h-screen flex flex-col bg-white fixed top-0 right-0 bottom-0  md:w-7/12 lg:w-4/12 z-50 p-4 overflow-auto'>
+      <div className='h-screen flex flex-col bg-white fixed top-0 left-0 right-0 bottom-0  md:left-auto md:w-7/12 lg:w-4/12 z-50 p-4 overflow-auto'>
         <CartHeader closeCart={closeCartList} />
         <CartItemList />
         <Subtotal />

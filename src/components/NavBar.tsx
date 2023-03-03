@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/redux-hook'
 import { setProduct } from '../services/slices/productSlice'
 import Cart from './Cart'
 import CartList from './CartList'
+import Logo from './Logo'
 
 import NavItem from './NavItem'
 import PopUpAddToCart from './PopUpAddToCart'
@@ -22,21 +23,12 @@ const NavBar = () => {
       {openSearch && <Search open={openSearch} closeSearchHandler={() => setOpenSearch(false)} />}
 
       {product && <PopUpAddToCart closePopup={() => dispatch(setProduct(null))} open={Boolean(product)} product={product} />}
-      <h1 onClick={() => navigate("/")} className='px-4  md:px-9 font-bold text-lg md:text-3xl tracking-widest uppercase mt-9 mb-3 hover:cursor-pointer'>
-        <span className='p-2 '>Everything</span>
-        <span className='p-2 bg-black text-white'>Addis</span>
-      </h1>
-      <div className=' grid grid-cols-2 items-center  px-5 md:px-10   z-20 pb-3 bg-white border-b border-b-gray-200 '>
-        <div className='space-x-5 text-sm font-light hidden md:flex '>
+      <Logo />
+      <div className='mt-10 md:mt-0 grid grid-cols-2 items-center  px-5 md:px-10   z-20 pb-3 bg-white border-b border-b-gray-200 '>
+        <div className='space-x-5 text-xs md:text-sm font-light flex'>
           <NavItem onClick={() => navigate("/new")} name='NEW' />
           <NavItem onClick={() => navigate("/all")} name='VIEW ALL' />
         </div>
-        <div className='md:hidden'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </div>
-
         <div className='flex space-x-5 justify-end '>
           <button onClick={() => setOpenSearch(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">

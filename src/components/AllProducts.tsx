@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useAppSelector } from '../hooks/redux-hook'
 import { useFetchProductsQuery } from '../services/api/productService'
 import Footer from './Footer'
+import NotFoundCollection from './NotFoundCollection'
 import Paginator from './Paginator'
 import Product from './Product'
 
@@ -21,8 +22,8 @@ const AllProducts = () => {
                     return <Product product={product} />
                 })}
             </div>
-            {isSuccess && <Paginator limit={limit} page={page} total={data?.total} updatePage={(newPage) => setPage(newPage)} />}
-        </div>
+            {isSuccess && data.products.length > 0 && <Paginator limit={limit} page={page} total={data?.total} updatePage={(newPage) => setPage(newPage)} />}
+            {isSuccess && data?.products.length === 0 && <NotFoundCollection message='Product Not Found' />}        </div>
     )
 }
 

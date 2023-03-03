@@ -46,20 +46,19 @@ const AddToCart = (props: IProps) => {
                 />
             </div>
             <div className='col-span-full md:col-span-6  order-3 pb-10'>
-                <div className=' tracking-wider text-2xl'>ROYCE GREEN MULTI FLORAL SLIT BODYCON MIDI DRESS</div>
-                <div className='flex space-x-2  mt-2'>
+                <div className='tracking-wider text-2xl font-bold'>ROYCE GREEN MULTI FLORAL SLIT BODYCON MIDI DRESS</div>
+                <div className='flex md:text-xl  space-x-2 ml-1 my-4'>
+                    <span className='text-gray-600'>{`${product.price} ETB`}</span>
                     {product.compareAtPrice && <span className='line-through text-red-500 decoration-red-500'>{`${product.compareAtPrice} ETB`}</span>}
-                    <span>{`${product.price} ETB`}</span>
-                </div>
 
-                <div className='space-y-2 mt-5'>
-                    <div className='flex'>
+                </div>
+                <div className='space-y-2 mt-3'>
+                    <div className='flex '>
                         <Quantity qty={quantity} increment={increment} decrement={decrement} />
                     </div>
                     <AddToCartButton isDisabled={product.isSoldOut} text={product.isSoldOut ? 'Sold Out' : undefined} addToCartHandler={() => { dispatch(addToCart({ product, quantity })) }} />
                 </div>
                 <ProductDetail description={product.description} />
-                <div className='h-10'></div>
             </div>
         </div>
     )
